@@ -1,0 +1,47 @@
+{
+  "passed": false,
+  "score": 92,
+  "dimensions": {
+    "design_token_compliance": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "structural_integrity": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "typographic_quality": {
+      "passed": false,
+      "score": 60,
+      "issues": [
+        "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+        "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+        "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+        "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语"
+      ]
+    },
+    "genre_fit": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "decoration_usage": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "security": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    }
+  },
+  "actionable_feedback": [
+    "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+    "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+    "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语",
+    "[TQ-03] <h2> 后直接出现 <h3>，中间无正文，请补充章节导语"
+  ]
+}

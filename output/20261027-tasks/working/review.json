@@ -1,0 +1,56 @@
+{
+  "passed": false,
+  "score": 80,
+  "dimensions": {
+    "design_token_compliance": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "structural_integrity": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "typographic_quality": {
+      "passed": false,
+      "score": 30,
+      "issues": [
+        "[TQ-04] 文档出现 8 个 <h1>，每个文档只应有 1 个主标题",
+        "[TQ-05] 文档出现 24 个 <h2>（WARNING），建议检查是否过于碎片化",
+        "[TQ-08] 封面 <div class=\"cover-rule\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+        "[TQ-08] 封面 <p class=\"cover-category\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+        "[TQ-08] 封面 <p class=\"cover-title\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+        "[TQ-08] 封面 <p class=\"cover-subtitle\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+        "[TQ-08] 封面 <div class=\"cover-meta\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\""
+      ]
+    },
+    "genre_fit": {
+      "passed": false,
+      "score": 70,
+      "issues": [
+        "[BR-01] 缺少执行摘要区（.executive-summary）"
+      ]
+    },
+    "decoration_usage": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    },
+    "security": {
+      "passed": true,
+      "score": 100,
+      "issues": []
+    }
+  },
+  "actionable_feedback": [
+    "[BR-01] 缺少执行摘要区（.executive-summary）",
+    "[TQ-04] 文档出现 8 个 <h1>，每个文档只应有 1 个主标题",
+    "[TQ-05] 文档出现 24 个 <h2>（WARNING），建议检查是否过于碎片化",
+    "[TQ-08] 封面 <div class=\"cover-rule\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+    "[TQ-08] 封面 <p class=\"cover-category\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+    "[TQ-08] 封面 <p class=\"cover-title\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+    "[TQ-08] 封面 <p class=\"cover-subtitle\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\"",
+    "[TQ-08] 封面 <div class=\"cover-meta\"> 未显式声明 text-align，可能被 p{text-align:justify} 兜底导致字距撑开，请补 style=\"... text-align: center;\""
+  ]
+}

@@ -1,0 +1,14 @@
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe.config
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.exe
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\bin\x64\Debug\WindowsFormsApp1.pdb
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\bin\x64\Debug\MultiCardCLR.dll
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\bin\x64\Debug\MultiCardCS.dll
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsF.A1EEDF9B.Up2Date
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.pdb
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.exe.config
+C:\Users\18205\Desktop\运动控制卡\antiSway\WindowsFormsApp1\obj\x64\Debug\WindowsFormsApp1.Form1.resources

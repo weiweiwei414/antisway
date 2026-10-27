@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="docx-page-size" content="A4">
+<title>桥式卸船机防摇实验台工作任务书</title>
+<style>
+@page { @bottom-center { content: "第 " counter(page) " 页"; } }
+@page cover { @bottom-center { content: none; } }
+section[role="cover"] { page: cover; }
+
+:root {
+  --ff-heading: "黑体", SimHei, sans-serif;
+  --ff-body: "宋体", SimSun, serif;
+  --fs-title: 30pt;
+  --fs-h1: 16pt;
+  --fs-h2: 13.5pt;
+  --fs-subtitle: 14pt;
+  --fs-body: 12pt;
+  --fs-toc: 11pt;
+  --fs-toc-sub: 10.5pt;
+  --fs-small: 10.5pt;
+  --lh-body: 1.75;
+  --color-text: #1a1a1a;
+  --color-heading: #12294a;
+  --color-primary: #1a4d8f;
+  --color-muted: #4a5a6e;
+  --color-muted-soft: #6b7684;
+  --color-border: #9fb2c8;
+  --color-surface: #e8eef6;
+  --color-toc-sub: #3a4656;
+  --spacing-zero: 0;
+  --spacing-xs: 0.55em;
+  --spacing-sm: 0.9em;
+  --spacing-md: 1.3em;
+  --spacing-lg: 1.6em;
+  --spacing-xl: 2.4em;
+  --spacing-indent: 2em;
+  --spacing-cell: 6px 8px;
+  --spacing-cell-sm: 5px 8px;
+  --spacing-toc-sub: 1.6em;
+  --spacing-hair: 6px;
+  --spacing-toc-gap: 1.4em;
+  --spacing-cover-pad: 3cm 2.5cm;
+  --spacing-toc-pad: 2.2cm 2.5cm;
+}
+
+* { box-sizing: border-box; margin: var(--spacing-zero); padding: var(--spacing-zero); }
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+}
+
+section[role="cover"].cover-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-cover-pad);
+  min-height: 22cm;
+}
+
+.cover-rule {
+  width: 88px;
+  height: 3px;
+  background: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.cover-category {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-body);
+  color: var(--color-primary);
+  letter-spacing: 0.18em;
+  margin-bottom: var(--spacing-md);
+  text-indent: var(--spacing-zero);
+}
+
+.cover-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-title);
+  font-weight: bold;
+  line-height: 1.4;
+  color: var(--color-heading);
+  margin-bottom: var(--spacing-sm);
+  text-indent: var(--spacing-zero);
+}
+
+.cover-subtitle {
+  font-family: var(--ff-body);
+  font-size: var(--fs-subtitle);
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-xl);
+  text-indent: var(--spacing-zero);
+}
+
+.cover-meta {
+  font-size: var(--fs-small);
+  color: var(--color-muted-soft);
+  line-height: 2;
+  text-indent: var(--spacing-zero);
+}
+
+.toc-page {
+  padding: var(--spacing-toc-pad);
+}
+
+.toc-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h1);
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: var(--spacing-toc-gap);
+  text-indent: var(--spacing-zero);
+}
+
+.toc-list, .toc-list ol, .toc-list ul { list-style: none; }
+
+.toc-list > li {
+  font-size: var(--fs-toc);
+  line-height: 2.1;
+  color: var(--color-text);
+}
+
+.toc-list ol > li {
+  font-size: var(--fs-toc-sub);
+  line-height: 1.9;
+  padding-left: var(--spacing-toc-sub);
+  color: var(--color-toc-sub);
+}
+
+.toc-list a { color: inherit; text-decoration: none; }
+
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h1);
+  color: var(--color-heading);
+  text-align: center;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--spacing-hair);
+  margin: var(--spacing-zero) var(--spacing-zero) var(--spacing-lg) var(--spacing-zero);
+  page-break-after: avoid;
+}
+
+h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h1);
+  color: var(--color-heading);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--spacing-hair);
+  margin: var(--spacing-lg) var(--spacing-zero) var(--spacing-sm) var(--spacing-zero);
+  page-break-after: avoid;
+}
+
+h3 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  margin: var(--spacing-md) var(--spacing-zero) var(--spacing-xs) var(--spacing-zero);
+  page-break-after: avoid;
+}
+
+.executive-summary {
+  background: var(--color-surface);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin: var(--spacing-zero) var(--spacing-zero) var(--spacing-lg) var(--spacing-zero);
+}
+
+.summary-title {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h2);
+  color: var(--color-heading);
+  margin-bottom: var(--spacing-xs);
+  text-indent: var(--spacing-zero);
+}
+
+.summary-body {
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--color-toc-sub);
+  text-indent: var(--spacing-zero);
+  margin: var(--spacing-zero);
+}
+
+p {
+  text-indent: var(--spacing-indent);
+  margin: var(--spacing-xs) var(--spacing-zero);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-sm) var(--spacing-zero);
+  font-size: var(--fs-small);
+}
+
+th {
+  font-family: var(--ff-heading);
+  font-weight: normal;
+  background: var(--color-surface);
+  color: var(--color-heading);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-cell);
+  text-align: left;
+  text-indent: var(--spacing-zero);
+}
+
+td {
+  font-size: var(--fs-small);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-cell-sm);
+  text-indent: var(--spacing-zero);
+  line-height: 1.6;
+}
+
+.checklist { list-style: none; margin: var(--spacing-xs) var(--spacing-zero) var(--spacing-sm) var(--spacing-zero); }
+
+.checklist li {
+  font-size: var(--fs-toc);
+  line-height: 1.95;
+  text-indent: var(--spacing-zero);
+  padding-left: var(--spacing-toc-sub);
+  position: relative;
+}
+
+.checklist li::before {
+  content: "\25A1";
+  position: absolute;
+  left: 0.2em;
+  color: var(--color-primary);
+}
+</style>
+</head>
+<body>
+
+<section role="cover" class="cover-page">
+  <div class="cover-rule" style="text-align: left;"></div>
+  <p class="cover-category" style="text-align: left;">项目工作文件</p>
+  <p class="cover-title" style="text-align: left;">桥式卸船机防摇实验台<br>工作任务书</p>
+  <p class="cover-subtitle" style="text-align: left;">从平台调试到论文定稿的工作分解与进度安排</p>
+  <div class="cover-meta" style="text-align: left;">
+    <p>适用范围：视觉检测定位、防摇控制策略、实验研究三部分</p>
+    <p>编制日期：2026 年 10 月 27 日</p>
+  </div>
+</section>
+
+<section role="cover" class="toc-page">
+<nav class="doc-toc" aria-label="文档目录">
+  <p class="toc-title">目　录</p>
+  <ol class="toc-list">
+    <li><a href="#section-1">一、项目背景与目标</a></li>
+    <li><a href="#section-2">二、现状盘点</a>
+      <ol>
+        <li><a href="#section-2-1">2.1　已完成工作</a></li>
+        <li><a href="#section-2-2">2.2　尚存缺口</a></li>
+      </ol>
+    </li>
+    <li><a href="#section-3">三、实施路径与里程碑</a>
+      <ol>
+        <li><a href="#section-3-1">3.1　阶段一：平台基础夯实</a></li>
+        <li><a href="#section-3-2">3.2　阶段二：视觉检测与定位</a></li>
+        <li><a href="#section-3-3">3.3　阶段三：防摇控制策略</a></li>
+        <li><a href="#section-3-4">3.4　阶段四：实验研究与数据分析</a></li>
+        <li><a href="#section-3-5">3.5　里程碑汇总</a></li>
+      </ol>
+    </li>
+    <li><a href="#section-4">四、关键任务明细</a>
+      <ol>
+        <li><a href="#section-4-1">4.1　脉冲当量标定</a></li>
+        <li><a href="#section-4-2">4.2　回零流程验证</a></li>
+        <li><a href="#section-4-3">4.3　数据集采集与标注</a></li>
+        <li><a href="#section-4-4">4.4　GDD-YOLO 模型训练</a></li>
+        <li><a href="#section-4-5">4.5　视觉定位链路</a></li>
+        <li><a href="#section-4-6">4.6　摆角提取</a></li>
+        <li><a href="#section-4-7">4.7　动力学建模与滑模控制设计</a></li>
+        <li><a href="#section-4-8">4.8　PSO-WOA 混合优化</a></li>
+        <li><a href="#section-4-9">4.9　跨语言架构</a></li>
+      </ol>
+    </li>
+    <li><a href="#section-5">五、资源与技术条件</a>
+      <ol>
+        <li><a href="#section-5-1">5.1　硬件条件</a></li>
+        <li><a href="#section-5-2">5.2　软件条件</a></li>
+        <li><a href="#section-5-3">5.3　工期估算</a></li>
+      </ol>
+    </li>
+    <li><a href="#section-6">六、风险与应对</a></li>
+    <li><a href="#section-7">七、预期产出</a></li>
+    <li><a href="#section-8">八、检查清单</a></li>
+  </ol>
+</nav>
+</section>
+
+<section role="body" data-page-restart="1">
+<main>
+
+<h1>桥式卸船机防摇实验台工作任务书</h1>
+
+<div class="executive-summary">
+  <p class="summary-title">执行摘要</p>
+  <p class="summary-body">实验台上位机已实现两轴点动、限位保护、原点采集与回零功能，平台骨架具备，整体进度约百分之十五。距离论文完成尚有三块工作：一是视觉检测与定位，需完成数据集构建、轻量化模型训练与三维坐标解算；二是防摇控制策略，需完成单摆建模、滑模与 RBF 补偿设计、PSO-WOA 参数整定及仿真验证；三是实验研究，需完成三组对比实验与数据分析。全流程约需十三至十五周，其中脉冲当量标定与跨语言架构确认两项为全局前置条件，应优先完成。</p>
+</div>
+
+<h2 id="section-1">一、项目背景与目标</h2>
+
+<p>本项目以桥式卸船机为研究对象，围绕“视觉检测定位—防摇控制策略—实验验证”三条主线，完成实验台搭建、算法研究与论文撰写工作。论文章节划分为三部分：第三章为基于机器视觉的检测与定位，第四章为基于 RBF 神经网络补偿的滑模自适应防摇策略，第五章为防摇实验研究。</p>
+
+<p>实验台硬件由运动控制卡、两轴执行机构、深度相机与电源系统构成。运动控制卡为博派科技 ETH_NEC_NLM 两轴型号，通过以太网与上位机通讯；轴一为直线模组，配 57 步进电机与 HB808C 驱动器；轴二为 42 步进电机，配 TB6600 驱动器；视觉传感器为 Intel RealSense D415 深度相机。轴一两端各设一个常闭式光电限位，原点开关接入零位输入 Home1，轴二暂无外部检测信号。</p>
+
+<p>截至当前，上位机程序已实现运动控制卡的打开与关闭、两轴点动与连续运动、限位检测与方向互锁、原点信号显示以及回零与位置清零功能，界面采用 WinForms 设计器构建。按论文整体要求衡量，目前完成度约为百分之十五：控制层骨架已具备，视觉、算法与实验数据三部分尚待开展。</p>
+
+<p>本任务书的目标是明确从现在到论文定稿需要完成的全部工作，给出阶段划分、里程碑节点、任务明细、资源需求与风险应对，作为后续推进的检查依据。</p>
+
+<h2 id="section-2">二、现状盘点</h2>
+
+<p>现状按已完成与待补齐两部分盘点。前者说明平台当前具备的能力，后者说明影响后续推进的关键缺口。</p>
+
+<h3 id="section-2-1">2.1　已完成工作</h3>
+
+<table>
+<thead>
+<tr><th style="width:8%">序号</th><th style="width:28%">工作内容</th><th style="width:14%">状态</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>运动控制卡通讯</td><td>已完成</td><td>以太网连接，通讯参数已确认</td></tr>
+<tr><td>2</td><td>两轴点动与连续运动</td><td>已完成</td><td>速度、加减速均可调</td></tr>
+<tr><td>3</td><td>限位检测与方向互锁</td><td>已完成</td><td>常闭逻辑，单向限制，可反向脱离</td></tr>
+<tr><td>4</td><td>原点信号采集与显示</td><td>已完成</td><td>常开逻辑，接入 Home1</td></tr>
+<tr><td>5</td><td>回零与位置清零</td><td>代码完成</td><td>尚未实机验证</td></tr>
+<tr><td>6</td><td>上位机界面</td><td>已完成</td><td>设计器布局，便于后续扩展</td></tr>
+</tbody>
+</table>
+
+<h3 id="section-2-2">2.2　尚存缺口</h3>
+
+<table>
+<thead>
+<tr><th style="width:8%">序号</th><th style="width:32%">缺口</th><th>影响</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>脉冲当量未标定</td><td>程序中数值为占位值，所有毫米与速度换算不可信</td></tr>
+<tr><td>2</td><td>回零流程未验证</td><td>坐标系无法建立，实验数据缺乏绝对基准</td></tr>
+<tr><td>3</td><td>相机未接入</td><td>视觉检测与定位链路完全空白</td></tr>
+<tr><td>4</td><td>数据集未采集</td><td>目标检测模型无法训练</td></tr>
+<tr><td>5</td><td>动力学模型未建立</td><td>控制算法无从设计</td></tr>
+<tr><td>6</td><td>跨语言架构未确定</td><td>视觉与控制无法联通</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-3">三、实施路径与里程碑</h2>
+
+<p>整体工作按四个阶段推进，总工期约十二至十四周，其中阶段二与阶段三存在并行空间。</p>
+
+<h3 id="section-3-1">3.1　阶段一：平台基础夯实（第 1 至 2 周）</h3>
+
+<p>本阶段目标是让实验台具备可信的位置基准，是所有后续工作的前提。核心任务包括脉冲当量标定、回零流程验证、机械结构就位与相机安装。</p>
+
+<p>阶段验收标准为：指令移动一百毫米，实际位移误差小于一毫米；回零后规划位置稳定归零；相机支架稳固且光轴垂直摆动平面。</p>
+
+<h3 id="section-3-2">3.2　阶段二：视觉检测与定位（第 3 至 6 周）</h3>
+
+<p>本阶段对应论文第三章。工作链条为数据集采集与标注、轻量化检测模型训练、视觉定位系统搭建、精度评价。</p>
+
+<p>阶段验收标准为：模型在验证集上的平均精度满足论文要求；目标三维定位残差小于八毫米；摆角测量分辨率优于零点三度。</p>
+
+<h3 id="section-3-3">3.3　阶段三：防摇控制策略（第 5 至 10 周）</h3>
+
+<p>本阶段对应论文第四章。工作内容包括单摆动力学建模、滑模面设计、RBF 神经网络补偿、PSO-WOA 混合优化算法整定参数以及仿真验证。</p>
+
+<p>阶段验收标准为：仿真环境下残余摆角收敛至两度以内；控制量无明显抖振；优化算法收敛曲线完整可复现。</p>
+
+<h3 id="section-3-4">3.4　阶段四：实验研究与数据分析（第 11 至 13 周）</h3>
+
+<p>本阶段对应论文第五章。工作内容包括视觉引导方案实现、防摇控制方案落地、多组对比实验与数据分析。</p>
+
+<p>阶段验收标准为：完成无控制、开环整形、本文方法三组对比；数据可支撑论文结论；图表齐全。</p>
+
+<h3 id="section-3-5">3.5　里程碑汇总</h3>
+
+<table>
+<thead>
+<tr><th style="width:26%">里程碑</th><th style="width:22%">时间节点</th><th>交付物</th></tr>
+</thead>
+<tbody>
+<tr><td>M1　平台就绪</td><td>第 2 周末</td><td>标定记录表、回零验证记录</td></tr>
+<tr><td>M2　数据集完成</td><td>第 4 周末</td><td>标注完成的数据集、数据统计表</td></tr>
+<tr><td>M3　模型训练完成</td><td>第 6 周末</td><td>训练日志、精度对比表</td></tr>
+<tr><td>M4　视觉定位打通</td><td>第 7 周末</td><td>定位残差表、摆角曲线样张</td></tr>
+<tr><td>M5　控制仿真通过</td><td>第 10 周末</td><td>仿真曲线、参数整定报告</td></tr>
+<tr><td>M6　实验数据齐备</td><td>第 13 周末</td><td>对比实验数据、分析图表</td></tr>
+<tr><td>M7　论文定稿</td><td>第 15 周末</td><td>论文全文</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-4">四、关键任务明细</h2>
+
+<p>以下逐项说明各关键任务的具体做法、验收标准与常见问题，可直接作为执行时的操作依据。</p>
+
+<h3 id="section-4-1">4.1　脉冲当量标定</h3>
+
+<p>这是当前最紧迫的任务，耗时约半天，但决定了后续全部数值的正确性。轴一为直线模组配 57 步进电机，轴二为 42 步进电机，两者步距角通常为一点八度，即每转两百步。</p>
+
+<p>脉冲当量的计算关系为：脉冲当量等于每转步数乘以驱动器细分数，再除以机械导程。其中细分数由驱动器拨码决定，导程由模组丝杠或同步带轮决定，两项均需现场确认。</p>
+
+<p>标定方法为：指令轴移动固定距离，用卷尺测量实际位移，按比例修正程序中数值，重复两次取平均。验收标准为往返三次的偏差均小于一毫米。</p>
+
+<p>需要记录的数据包括：直线模组导程、HB808C 与 TB6600 的细分拨码位置、最终脉冲当量数值。</p>
+
+<h3 id="section-4-2">4.2　回零流程验证</h3>
+
+<p>程序中已实现基于零位信号的自动回零，采用找零位方式，流程为快速寻找零位、反向离开、再次寻找、移动偏移量、位置清零。原点开关为常开型，程序中已对输入电平作取反处理。</p>
+
+<p>验证要点包括：回零方向是否正确、回零速度是否合适、回零完成后规划位置是否准确归零、重复回零三次的一致性。</p>
+
+<p>若回零方向错误，需调整程序中的方向常量；若回零过程中触碰限位，需检查回零起始位置。</p>
+
+<h3 id="section-4-3">4.3　数据集采集与标注</h3>
+
+<p>数据集质量决定检测模型的上限，是本阶段最容易被低估的环节。采集时需让小车在行程范围内多点停留，覆盖不同位置、不同光照条件与不同背景。</p>
+
+<p>采集规模建议不少于八百张，按八比一比一划分训练集、验证集与测试集。标注类别建议为两至三类，需覆盖实际检测需求。标注工具可采用 LabelImg 或 Labelme。</p>
+
+<p>采集时需注意：避免单一场景导致泛化能力不足；保留一定比例的遮挡样本与边缘样本；记录每张图像的采集位置与光照条件，便于后续分析。</p>
+
+<h3 id="section-4-4">4.4　GDD-YOLO 模型训练</h3>
+
+<p>在基础检测模型上引入轻量化改进，论文需给出改进前后的对比。对比维度包括平均精度、参数量、计算量、推理帧率。</p>
+
+<p>训练时需控制变量：同一数据集、同一训练轮次、同一图像尺寸，确保对比结论成立。训练完成后需保存损失曲线与精度曲线，作为论文图表素材。</p>
+
+<p>需要重点关注的指标是推理帧率，因为视觉结果要参与实时控制，端到端延迟直接影响控制效果。</p>
+
+<h3 id="section-4-5">4.5　视觉定位链路</h3>
+
+<p>该链路包含五个环节：彩色图像输入检测模型得到检测框、深度图对齐至彩色图像坐标系、在检测框内取深度中位数、利用彩色相机内参反投影得到相机坐标、经刚体变换转换为机械坐标。</p>
+
+<p>其中深度对齐环节最易遗漏。D415 的彩色传感器与深度传感器视场不同，未对齐时检测框与深度图像素不匹配，定位误差可达数十厘米。</p>
+
+<p>外参标定建议采用多点拟合方式：让小车依次停留于若干已知位置，记录视觉解算结果，最小二乘拟合线性关系，并给出残差表。该残差表本身即可作为论文第三章的实验数据。</p>
+
+<p>精度评价需包含三项：重投影误差、与位置基准的偏差、同一位置重复测量的标准差。</p>
+
+<h3 id="section-4-6">4.6　摆角提取</h3>
+
+<p>摆角是本实验的核心观测量，同时承担评价指标、优化目标、控制反馈与论文图表四项功能。</p>
+
+<p>提取方法为：相机光轴垂直摆动平面，在图像平面内检测吊重标记的质心，计算其相对竖直中心线的像素偏移，乘以标定系数得到摆角。标定系数通过两点法确定，即记录静止位置与已知角度位置的像素坐标，线性拟合求得。</p>
+
+<p>帧率选择建议为 640×480、60 帧每秒。该分辨率下角度分辨率约为零点一度，单个摆动周期可采集约九十个采样点，足以刻画波形峰值。</p>
+
+<p>需记录每帧采集时间戳，与运动指令时间对齐，否则摆角时间曲线将出现错位。</p>
+
+<h3 id="section-4-7">4.7　动力学建模与滑模控制设计</h3>
+
+<p>建立小车与吊重组成的单摆系统动力学模型，给出状态空间表达。模型参数中的固有频率与阻尼比通过自由衰减实验辨识：将吊重拉开固定角度释放，记录衰减曲线，由频谱峰值确定固有频率，由相邻波峰幅值比确定阻尼比。</p>
+
+<p>在此基础上设计滑模面与趋近律，引入 RBF 神经网络逼近模型不确定项与外部扰动，构成自适应滑模控制律。</p>
+
+<p>需特别注意角速度的获取方式。直接对摆角差分会产生显著噪声，经滑模开关项放大后表现为抖振，因此必须引入跟踪微分器或卡尔曼滤波进行估计。该项工作应单列小节论述。</p>
+
+<h3 id="section-4-8">4.8　PSO-WOA 混合优化</h3>
+
+<p>以滑模增益、RBF 网络中心与宽度为优化变量，以摆角收敛时间与超调量为目标函数，采用粒子群与鲸鱼优化相结合的混合算法整定参数。</p>
+
+<p>需给出算法流程图、适应度收敛曲线以及优化前后的控制效果对比。为体现混合算法的优势，建议设置与单一粒子群算法、单一鲸鱼算法的对照。</p>
+
+<h3 id="section-4-9">4.9　跨语言架构</h3>
+
+<p>上位机为 C# 程序，视觉与控制算法多在 Python 环境实现，两者不能同时占用同一张控制卡。架构方案需在算法开发前确定，避免返工。</p>
+
+<p>可选方案有两种：一是通过 Python 的 .NET 互操作直接调用控制卡动态库，优点是无需改造现有程序，缺点是需要处理运行时兼容与多线程问题；二是由 C# 程序提供本地通讯服务，Python 作为客户端发送指令并接收状态，优点是边界清晰，缺点是需自行定义协议。</p>
+
+<p>建议先以第一种方案做可行性验证，半日内可得出结论；若不成立则转向第二种方案。</p>
+
+<h2 id="section-5">五、资源与技术条件</h2>
+
+<p>本项目所需的硬件设备、软件环境与工期安排如下，用于核查条件是否齐备。</p>
+
+<h3 id="section-5-1">5.1　硬件条件</h3>
+
+<table>
+<thead>
+<tr><th style="width:22%">类别</th><th style="width:48%">配置</th><th>状态</th></tr>
+</thead>
+<tbody>
+<tr><td>运动控制卡</td><td>博派 ETH_NEC_NLM 两轴</td><td>就绪</td></tr>
+<tr><td>轴一</td><td>直线模组、57 步进电机、HB808C 驱动器</td><td>就绪</td></tr>
+<tr><td>轴二</td><td>42 步进电机、TB6600 驱动器</td><td>就绪</td></tr>
+<tr><td>电源</td><td>开关电源</td><td>就绪</td></tr>
+<tr><td>视觉</td><td>Intel RealSense D415 深度相机</td><td>就绪，待安装</td></tr>
+<tr><td>附属</td><td>相机支架、吊重、可调吊绳</td><td>待配置</td></tr>
+</tbody>
+</table>
+
+<h3 id="section-5-2">5.2　软件条件</h3>
+
+<p>上位机程序基于 .NET Framework 与 WinForms，运动控制采用厂商提供的动态库。视觉部分建议采用 RealSense 官方 SDK 与 OpenCV，检测模型训练采用主流深度学习框架。算法仿真可采用 MATLAB 或 Python 科学计算库。</p>
+
+<h3 id="section-5-3">5.3　工期估算</h3>
+
+<table>
+<thead>
+<tr><th style="width:16%">阶段</th><th style="width:54%">内容</th><th>工期</th></tr>
+</thead>
+<tbody>
+<tr><td>阶段一</td><td>平台基础夯实</td><td>2 周</td></tr>
+<tr><td>阶段二</td><td>视觉检测与定位</td><td>4 周</td></tr>
+<tr><td>阶段三</td><td>防摇控制策略</td><td>6 周（与阶段二部分并行）</td></tr>
+<tr><td>阶段四</td><td>实验与数据分析</td><td>3 周</td></tr>
+<tr><td>阶段五</td><td>论文撰写与修改</td><td>2 周</td></tr>
+</tbody>
+</table>
+
+<p>按全职投入估算总工期约十三至十五周，业余投入则需延长至一个学期。</p>
+
+<h2 id="section-6">六、风险与应对</h2>
+
+<table>
+<thead>
+<tr><th style="width:8%">序号</th><th style="width:32%">风险描述</th><th style="width:14%">影响程度</th><th>应对措施</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>数据集规模不足或场景单一</td><td>高</td><td>采集阶段多场景覆盖，必要时做数据增强</td></tr>
+<tr><td>2</td><td>深度图在反光或黑色表面失效</td><td>中</td><td>摆角提取以彩色图为主，深度仅用于定尺度</td></tr>
+<tr><td>3</td><td>视觉延迟导致控制失稳</td><td>高</td><td>降低控制增益，引入延迟补偿环节</td></tr>
+<tr><td>4</td><td>角速度估计噪声引发抖振</td><td>高</td><td>采用跟踪微分器，模型与观测器分离设计</td></tr>
+<tr><td>5</td><td>跨语言架构调整导致返工</td><td>中</td><td>算法开发前先做架构可行性验证</td></tr>
+<tr><td>6</td><td>步进电机开环丢步</td><td>中</td><td>控制加速度上限，用视觉定期校核位置</td></tr>
+<tr><td>7</td><td>吊绳长度变化引起频率漂移</td><td>中</td><td>采用鲁棒性较强的整形器，或按实测频率更新参数</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-7">七、预期产出</h2>
+
+<table>
+<thead>
+<tr><th style="width:22%">类别</th><th>具体内容</th></tr>
+</thead>
+<tbody>
+<tr><td>实验平台</td><td>具备视觉引导与防摇控制能力的完整实验台</td></tr>
+<tr><td>程序代码</td><td>上位机控制程序、视觉处理程序、控制算法程序</td></tr>
+<tr><td>数据集</td><td>标注完成的检测数据集及统计说明</td></tr>
+<tr><td>模型</td><td>轻量化检测模型及训练权重</td></tr>
+<tr><td>实验数据</td><td>三组对比实验的原始数据与处理结果</td></tr>
+<tr><td>论文</td><td>三章正文、图表、参考文献</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-8">八、检查清单</h2>
+
+<p>以下清单按阶段排列，每完成一项即行勾选，可作为每周进度自查的依据。</p>
+
+<h3>阶段一</h3>
+<ul class="checklist">
+<li>确认直线模组导程并记录</li>
+<li>读取 HB808C 与 TB6600 细分拨码并记录</li>
+<li>完成脉冲当量标定，往返误差小于一毫米</li>
+<li>验证回零方向与重复精度</li>
+<li>完成相机支架安装，光轴垂直摆动平面</li>
+<li>配置可调吊绳与吊重</li>
+</ul>
+
+<h3>阶段二</h3>
+<ul class="checklist">
+<li>完成数据集采集，规模不少于八百张</li>
+<li>完成标注并划分训练验证测试集</li>
+<li>完成基线模型训练与精度评估</li>
+<li>完成轻量化改进与对比实验</li>
+<li>打通检测到三维坐标的完整链路</li>
+<li>完成外参标定并给出残差表</li>
+<li>完成摆角提取与两点标定</li>
+<li>验证时间戳对齐</li>
+</ul>
+
+<h3>阶段三</h3>
+<ul class="checklist">
+<li>建立单摆动力学模型</li>
+<li>通过自由衰减实验辨识频率与阻尼</li>
+<li>完成滑模面与趋近律设计</li>
+<li>完成 RBF 补偿网络设计</li>
+<li>完成 PSO-WOA 参数整定</li>
+<li>完成仿真验证并给出对比曲线</li>
+<li>验证角速度估计的噪声水平</li>
+</ul>
+
+<h3>阶段四</h3>
+<ul class="checklist">
+<li>完成跨语言架构验证</li>
+<li>实现视觉引导运动</li>
+<li>实现防摇控制闭环</li>
+<li>完成无控制组实验</li>
+<li>完成开环整形组实验</li>
+<li>完成本文方法组实验</li>
+<li>完成数据分析与图表绘制</li>
+</ul>
+
+<h3>收尾</h3>
+<ul class="checklist">
+<li>整理全部原始数据与代码</li>
+<li>撰写第三章并定稿</li>
+<li>撰写第四章并定稿</li>
+<li>撰写第五章并定稿</li>
+<li>全文统稿与格式检查</li>
+</ul>
+
+</main>
+</section>
+
+</body>
+</html>
