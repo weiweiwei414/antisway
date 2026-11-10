@@ -13,8 +13,17 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
+  <!-- ====================================================================
+       集成视觉模块（D415 / vs_vision.dll）后的两条硬约束：
+         1. vs_vision.dll 及其依赖（realsense2.dll、libopencv_*.dll、libstdc++-6.dll）
+            只有 64 位版本，且靠 Form1.cs 里的 SetDllDirectory 指向仓库根的 vision 目录。
+            因此所有配置一律固定 x64；AnyCPU 在 32 位进程里会 BadImageFormatException。
+         2. VisionClient.cs 用链接方式引入 vision 目录里那一份，不复制第二份，
+            避免 C# 封装和 C 接口（vs_api.h）两边改出不同步。
+       ==================================================================== -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -67,6 +77,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <!-- 视觉 DLL 的 C# 封装：链接 ..\vision\VisionClient.cs，全工程只此一份 -->
+    <Compile Include="..\vision\VisionClient.cs">
+      <Link>VisionClient.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
